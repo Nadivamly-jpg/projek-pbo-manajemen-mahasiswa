@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+
+public class latihanb {
+
+public class HitungKata {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+            System.out.print("Masukkan kalimat: ");
+            String line = br.readLine();  // baca satu baris teks
+
+            if (line == null || line.trim().isEmpty()) {
+                System.out.println("Jumlah kata: 0");
+            } else {
+                // Pisah berdasarkan satu atau lebih spasi
+                String[] words = line.trim().split("\\s+");
+                System.out.println("Jumlah kata: " + words.length);
+            }
+        } catch (IOException e) {
+            System.err.println("Terjadi kesalahan input: " + e.getMessage());
+        }
+    }
+}
+
+}
